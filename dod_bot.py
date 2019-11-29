@@ -12,7 +12,10 @@ import dod_bot_config  # my configuration file
 
 TOKEN = dod_bot_config.TOKEN
 
-HELP_MESSAGE = dod_bot_config.HELP_MESSAGE
+HELP_MESSAGE = """
+Привет, абитуриент!
+Я хочу сыграть с тобой в одну игру, в процессе которой ты узнаешь, какие направления существуют в ИКНТ, какие технологии там изучают, и где они потом тебе пригодятся! А если наберёшь достаточно баллов, приходи за наградой к стенду ИКНТ!
+"""
 
 with open("tasks.json", encoding='utf-8') as json_file:
     TASKS = json.load(json_file)
