@@ -115,8 +115,8 @@ def check_answer(bot, update, user):
     if user['task'] < len(TASKS):
         send_question(bot, update, TASKS[user['task']])
     else:
-        answer_text(update, "Это было последнее задание!\nТы набрал " + str(
-            user['score']) + " баллов. Приходи на стенд ИКНТ, авось чем-нибудь наградим :)")
+        answer_text(update, "Это было последнее задание!\nБаллов: " + str(
+            user['score']) + ". Приходи на стенд ИКНТ, авось чем-нибудь наградим :)")
 
 
 def message_handler(bot, update):
@@ -126,7 +126,8 @@ def message_handler(bot, update):
         user['name'] = update.message.text
         save_user(user)
         answer_text(update, "Приятно познакомиться, " + user['name'] + "!")
-        answer_text(update, "Теперь напиши свой e-mail. ")
+        answer_text(update, "Теперь напиши свой e-mail. Не бойся, это не ловушка спамеров. "
+                            "Присылать будем только информацию для абитуриентов ИКНТ.")
         return
 
     if user['email'] == "":
